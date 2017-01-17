@@ -26,4 +26,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+	
+	//says which table model is connected to
+	protected $table = 'users';
 }
+	
