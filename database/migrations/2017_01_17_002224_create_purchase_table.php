@@ -13,15 +13,15 @@ class CreatePurchaseTable extends Migration
      */
     public function up()
     {
-        Schema::create('purchase', function (Blueprint $table) {
+        Schema::create('purchases', function (Blueprint $table) {
             $table->increments('purchase_ID');
 			$table->integer('user_ID')->unsigned();
 			$table->integer('inventory_ID')->unsigned();
 			$table->unique('inventory_ID');
             $table->timestamps();
         });
-		Schema::table('purchase',function (Blueprint $table) {
-			$table->foreign('user_ID')->references('user_ID')->on('user');
+		Schema::table('purchases',function (Blueprint $table) {
+			$table->foreign('user_ID')->references('user_ID')->on('users');
 			$table->foreign('inventory_ID')->references('inventory_ID')->on('inventory');
 		});
     }
@@ -33,7 +33,7 @@ class CreatePurchaseTable extends Migration
      */
     public function down()
     {
-                Schema::dropIfExists('purchase');
+                Schema::dropIfExists('purchases');
 
     }
 }

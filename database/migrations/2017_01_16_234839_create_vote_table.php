@@ -13,7 +13,7 @@ class CreateVoteTable extends Migration
      */
     public function up()
     {
-        Schema::create('vote', function (Blueprint $table) {
+        Schema::create('votes', function (Blueprint $table) {
             $table->increments('vote_ID');
 			$table->integer('user_ID')->unsigned();
 			$table->integer('game_ID')->unsigned();
@@ -22,8 +22,8 @@ class CreateVoteTable extends Migration
         });
 		
 		Schema::table('vote',function (Blueprint $table) {
-			$table->foreign('user_ID')->references('user_ID')->on('user');
-			$table->foreign('game_ID')->references('game_ID')->on('game');
+			$table->foreign('user_ID')->references('user_ID')->on('users');
+			$table->foreign('game_ID')->references('game_ID')->on('games');
 		});
     }
 
@@ -34,6 +34,6 @@ class CreateVoteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vote');
+        Schema::dropIfExists('votes');
     }
 }

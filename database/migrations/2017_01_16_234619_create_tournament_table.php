@@ -13,15 +13,15 @@ class CreateTournamentTable extends Migration
      */
     public function up()
     {
-         Schema::create('tournament', function (Blueprint $table) {
+         Schema::create('tournaments', function (Blueprint $table) {
             $table->increments('tournament_ID');
 			$table->integer('game_ID')->unsigned();
             $table->string('info_s')->nullable();
             $table->timestamps();
         });
 		
-		Schema::table('tournament',function (Blueprint $table) {
-			$table->foreign('game_ID')->references('game_ID')->on('game');
+		Schema::table('tournaments',function (Blueprint $table) {
+			$table->foreign('game_ID')->references('game_ID')->on('games');
 		});
     }
 
@@ -32,7 +32,7 @@ class CreateTournamentTable extends Migration
      */
     public function down()
     {
-               Schema::dropIfExists('tournament');
+               Schema::dropIfExists('tournaments');
 
     }
 }

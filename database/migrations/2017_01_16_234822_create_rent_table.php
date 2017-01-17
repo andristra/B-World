@@ -13,7 +13,7 @@ class CreateRentTable extends Migration
      */
     public function up()
     {
-         Schema::create('rent', function (Blueprint $table) {
+         Schema::create('rents', function (Blueprint $table) {
             $table->increments('rent_ID');
 			$table->date('rented_at_d');
             $table->float('rate_2n',3,2);
@@ -23,8 +23,8 @@ class CreateRentTable extends Migration
             $table->timestamps();
         });
 		
-		Schema::table('rent',function (Blueprint $table) {
-			$table->foreign('user_ID')->references('user_ID')->on('user');
+		Schema::table('rents',function (Blueprint $table) {
+			$table->foreign('user_ID')->references('user_ID')->on('users');
 			$table->foreign('inventory_ID')->references('inventory_ID')->on('inventory');
 		});
     }
@@ -36,7 +36,7 @@ class CreateRentTable extends Migration
      */
     public function down()
     {
-                         Schema::dropIfExists('rent');
+                         Schema::dropIfExists('rents');
 
     }
 }

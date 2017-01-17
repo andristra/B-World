@@ -21,7 +21,7 @@ class CreateInventoryTable extends Migration
             $table->timestamps();
         });
 			Schema::table('inventory',function (Blueprint $table) {
-			$table->foreign('game_ID')->references('game_ID')->on('game');
+			$table->foreign('game_ID')->references('game_ID')->on('games');
 		});
     }
 
