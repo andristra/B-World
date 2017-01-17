@@ -15,13 +15,14 @@ class CreateInventoryTable extends Migration
     {
         Schema::create('inventory', function (Blueprint $table) {
             $table->increments('inventory_ID');
-			$table->primary('inventory_ID');
-			$table->increments('game_ID');
-			$table->foreign('game_ID')->references('game_ID')->on('game');
+			$table->integer('game_ID')->unsigned();
             $table->integer('purchased_n')->default(0);
 			$table->integer('rented_n')->default(0);
             $table->timestamps();
         });
+			Schema::table('inventory',function (Blueprint $table) {
+			$table->foreign('game_ID')->references('game_ID')->on('game');
+		});
     }
 
     /**

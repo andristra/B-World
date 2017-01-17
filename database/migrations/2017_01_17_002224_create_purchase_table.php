@@ -15,14 +15,15 @@ class CreatePurchaseTable extends Migration
     {
         Schema::create('purchase', function (Blueprint $table) {
             $table->increments('purchase_ID');
-			$table->primary('purchase_ID');
-			$table->increments('user_ID');
-			$table->foreign('user_ID')->references('user_ID')->on('user');
-			$table->increments('inventory_ID');
-			$table->foreign('inventory_ID')->references('inventory_ID')->on('inventory');
+			$table->integer('user_ID')->unsigned();
+			$table->integer('inventory_ID')->unsigned();
 			$table->unique('inventory_ID');
             $table->timestamps();
         });
+		Schema::table('purchase',function (Blueprint $table) {
+			$table->foreign('user_ID')->references('user_ID')->on('user');
+			$table->foreign('inventory_ID')->references('inventory_ID')->on('inventory');
+		});
     }
 
     /**

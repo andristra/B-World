@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/test', function () {
+return view ('bee');
+});
+Route::get('post/{action}/{post_id?}',
+function($action, $post_id = null) {
+echo 'I want to ', $action , ' ';
+if (!empty($post_id))
+echo $post_id;
+});

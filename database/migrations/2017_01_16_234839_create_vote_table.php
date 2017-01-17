@@ -15,14 +15,16 @@ class CreateVoteTable extends Migration
     {
         Schema::create('vote', function (Blueprint $table) {
             $table->increments('vote_ID');
-			$table->primary('vote_ID');
-			$table->increments('user_ID');
-			$table->foreign('user_ID')->references('user_ID')->on('user');
-			$table->increments('game_ID');
-			$table->foreign('game_ID')->references('game_ID')->on('game');
+			$table->integer('user_ID')->unsigned();
+			$table->integer('game_ID')->unsigned();
 			$table->unique(['user_ID', 'game_ID']);	
             $table->timestamps();
         });
+		
+		Schema::table('vote',function (Blueprint $table) {
+			$table->foreign('user_ID')->references('user_ID')->on('user');
+			$table->foreign('game_ID')->references('game_ID')->on('game');
+		});
     }
 
     /**
