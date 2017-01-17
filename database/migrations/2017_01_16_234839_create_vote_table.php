@@ -21,7 +21,7 @@ class CreateVoteTable extends Migration
             $table->timestamps();
         });
 		
-		Schema::table('vote',function (Blueprint $table) {
+		Schema::table('votes',function (Blueprint $table) {
 			$table->foreign('user_ID')->references('user_ID')->on('users');
 			$table->foreign('game_ID')->references('game_ID')->on('games');
 		});
