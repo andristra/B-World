@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGameTable extends Migration
+class AddUsersAdmin extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateGameTable extends Migration
      */
     public function up()
     {
-        Schema::create('games', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name_s');
-            $table->string('genre_s')->nullable();
-            $table->timestamps();
-        });
+        Schema::table('users', function (Blueprint $table) {
+		$table->boolean('admin')->default(0);
+		});
     }
 
     /**
@@ -28,7 +25,8 @@ class CreateGameTable extends Migration
      */
     public function down()
     {
-       Schema::dropIfExists('games');
-
+         Schema::table('users', function (Blueprint $table) {
+		 $table->dropColumn('admin');
+		 });
     }
 }

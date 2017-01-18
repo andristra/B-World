@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class tournament extends Model
 {
-    //
+    protected $table = 'tournaments';
 }

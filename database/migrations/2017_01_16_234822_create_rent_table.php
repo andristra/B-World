@@ -14,18 +14,18 @@ class CreateRentTable extends Migration
     public function up()
     {
          Schema::create('rents', function (Blueprint $table) {
-            $table->increments('rent_ID');
+            $table->increments('id');
 			$table->date('rented_at_d');
             $table->float('rate_2n',3,2);
-			$table->integer('user_ID')->unsigned();
-			$table->integer('inventory_ID')->unsigned();
-			$table->unique('inventory_ID');
+			$table->integer('user_id')->unsigned();
+			$table->integer('inventory_id')->unsigned();
+			$table->unique('inventory_id');
             $table->timestamps();
         });
 		
 		Schema::table('rents',function (Blueprint $table) {
-			$table->foreign('user_ID')->references('user_ID')->on('users');
-			$table->foreign('inventory_ID')->references('inventory_ID')->on('inventory');
+			$table->foreign('user_id')->references('id')->on('users');
+			$table->foreign('inventory_id')->references('id')->on('inventory');
 		});
     }
 

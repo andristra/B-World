@@ -1,0 +1,75 @@
+
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+body{
+	font-family: 'PT Sans', sans-serif;
+    background-color: #e5fffe;
+    color:#1b3868;
+    font-size: 16px;
+    line-height: 1.5em;
+    min-width: 900px;
+    position: relative;
+}
+h1{
+    color: #041c44;
+    text-align: center;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    font-size: 2.5rem;
+}
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	text-align: center;
+	background-color: #ffffff;
+	width: 450px;
+}
+
+
+h2{
+    color: #60ADD6;
+
+    margin-top: 4px;
+    margin-bottom: 8px;
+    font-size:1.5rem;
+    text-transform: capitalize;
+}
+h3{
+    color: #3F458F;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    line-height: 1.5em;
+    font-size: 1.25rem;
+}
+
+ul#main-menu li a{
+    vertical-align: middle;
+
+    text-align: left;
+    text-decoration: none;
+    line-height: 50px;
+    font-size: 20px;
+    padding-right: 15px;
+}
+
+ul#main-menu {
+
+    padding-right:120px;
+    overflow: hidden;
+}
+ul#main-menu li{
+    display: inline;
+    float: left;
+}
+
+ul#main-menu li a:visited{
+    color: red;
+}
+
+
+
+ul{
+    list-style-type: none;
+}
+
+
+

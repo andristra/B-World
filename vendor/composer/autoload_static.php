@@ -305,13 +305,16 @@ class ComposerStaticInitd42e52225b3192aa6cf299286f479d12
     );
 
     public static $classMap = array (
+        'AddGameInfo' => __DIR__ . '/../..' . '/database/migrations/2017_01_17_202601_add_game_info.php',
+        'AddGameRate' => __DIR__ . '/../..' . '/database/migrations/2017_01_17_220651_add_game_rate.php',
+        'AddUsersAdmin' => __DIR__ . '/../..' . '/database/migrations/2017_01_17_204835_add_users_admin.php',
         'CreateGameTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_16_231754_create_game_table.php',
         'CreateInventoryTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_16_234730_create_inventory_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreatePurchaseTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_17_002224_create_purchase_table.php',
         'CreateRentTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_16_234822_create_rent_table.php',
         'CreateTournamentTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_16_234619_create_tournament_table.php',
-        'CreateUserTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_16_234757_create_user_table.php',
+        'CreateUserTable' => __DIR__ . '/../..' . '/database/stuff/2017_01_16_234757_create_user_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'CreateVoteTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_16_234839_create_vote_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',

@@ -14,14 +14,14 @@ class CreateInventoryTable extends Migration
     public function up()
     {
         Schema::create('inventory', function (Blueprint $table) {
-            $table->increments('inventory_ID');
-			$table->integer('game_ID')->unsigned();
+            $table->increments('id');
+			$table->integer('game_id')->unsigned();
             $table->integer('purchased_n')->default(0);
 			$table->integer('rented_n')->default(0);
             $table->timestamps();
         });
 			Schema::table('inventory',function (Blueprint $table) {
-			$table->foreign('game_ID')->references('game_ID')->on('games');
+			$table->foreign('game_id')->references('id')->on('games');
 		});
     }
 

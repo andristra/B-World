@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGameTable extends Migration
+class CreatePasswordResetsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateGameTable extends Migration
      */
     public function up()
     {
-        Schema::create('games', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name_s');
-            $table->string('genre_s')->nullable();
-            $table->timestamps();
+        Schema::create('password_resets', function (Blueprint $table) {
+            $table->string('email')->index();
+            $table->string('token')->index();
+            $table->timestamp('created_at')->nullable();
         });
     }
 
@@ -28,7 +27,6 @@ class CreateGameTable extends Migration
      */
     public function down()
     {
-       Schema::dropIfExists('games');
-
+        Schema::drop('password_resets');
     }
 }

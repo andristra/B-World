@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGameTable extends Migration
+class AddGameRate extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateGameTable extends Migration
      */
     public function up()
     {
-        Schema::create('games', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name_s');
-            $table->string('genre_s')->nullable();
-            $table->timestamps();
-        });
+        Schema::table('games', function (Blueprint $table) {
+		$table->decimal('rate', 3, 2);	
+		});
     }
 
     /**
@@ -28,7 +25,8 @@ class CreateGameTable extends Migration
      */
     public function down()
     {
-       Schema::dropIfExists('games');
-
+        Schema::table('games', function (Blueprint $table) {
+    $table->dropColumn('rate');
+	});
     }
 }

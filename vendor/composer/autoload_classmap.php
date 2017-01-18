@@ -6,13 +6,16 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddGameInfo' => $baseDir . '/database/migrations/2017_01_17_202601_add_game_info.php',
+    'AddGameRate' => $baseDir . '/database/migrations/2017_01_17_220651_add_game_rate.php',
+    'AddUsersAdmin' => $baseDir . '/database/migrations/2017_01_17_204835_add_users_admin.php',
     'CreateGameTable' => $baseDir . '/database/migrations/2017_01_16_231754_create_game_table.php',
     'CreateInventoryTable' => $baseDir . '/database/migrations/2017_01_16_234730_create_inventory_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreatePurchaseTable' => $baseDir . '/database/migrations/2017_01_17_002224_create_purchase_table.php',
     'CreateRentTable' => $baseDir . '/database/migrations/2017_01_16_234822_create_rent_table.php',
     'CreateTournamentTable' => $baseDir . '/database/migrations/2017_01_16_234619_create_tournament_table.php',
-    'CreateUserTable' => $baseDir . '/database/migrations/2017_01_16_234757_create_user_table.php',
+    'CreateUserTable' => $baseDir . '/database/stuff/2017_01_16_234757_create_user_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'CreateVoteTable' => $baseDir . '/database/migrations/2017_01_16_234839_create_vote_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
