@@ -19,5 +19,5 @@ Route::get('/test', function () {
 });
 
 Auth::routes();
-
+Route::get('/game', 'GamCtrl@index');
 Route::get('/home', 'HomeController@index');
