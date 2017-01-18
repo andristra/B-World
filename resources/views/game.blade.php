@@ -14,19 +14,22 @@
     @endif
 	<nav class="menu" id="menu">
             <ul id="main-menu">
-                <li><a href='#games'>Game selection</a></li>
+                <li><a href="{{ url('/game') }}">Game selection</a></li>
                 <li><a href='#tournaments'>Tournaments</a></li>
             </ul>
     </nav>
-@for($i=1;$i<11;$i++)
+@foreach ($games as $game)
 	<div class="card">
 		<div class="container">
-		<!-- 		<img src= @yield('image') alt='oops, the game disappeared!'> -->
+		<img src={{$game->info}} alt='oops, the game disappeared!'>
 		<h4>
-		@yield('infoname')
+		{{$game->name_s}}
 		</h4>
+		<p>
+		
+		</p>
 		<button type="button">Click for more info!</button>
 	</div>
 	</div>
-@endfor
+@endforeach
 	</body>
